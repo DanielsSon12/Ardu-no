@@ -1,0 +1,45 @@
+// C++ code
+//
+//Resistores com 300 de Ohms de resistência
+//
+//LEDS:
+int ledVermelho = 2;
+int ledAzul = 4;
+int ledVerde = 7;
+int ledAmarelo = 8;
+//
+//BOTÃO:
+int botao = 10;
+//
+//DELAY:
+int intervalo = 150;
+//
+void setup()
+{
+  pinMode(ledVermelho, OUTPUT);
+  pinMode(ledAzul, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+  pinMode(ledAmarelo, OUTPUT);
+  pinMode(botao, INPUT);
+}
+
+void loop()
+{
+  if(digitalRead(botao) == HIGH)
+  {
+    digitalWrite(ledVermelho, HIGH);
+    delay(intervalo);
+    digitalWrite(ledAzul, HIGH);
+    delay(intervalo);
+    digitalWrite(ledVerde, HIGH);
+    delay(intervalo);    
+    digitalWrite(ledAmarelo, HIGH);
+  }
+  digitalWrite(ledVermelho, LOW);
+  delay(intervalo);
+  digitalWrite(ledAzul, LOW);
+  delay(intervalo);
+  digitalWrite(ledVerde, LOW);
+  delay(intervalo);
+  digitalWrite(ledAmarelo, LOW);
+}
