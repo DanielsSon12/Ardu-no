@@ -7,6 +7,8 @@ int ledVermelho = 2;
 int ledAzul = 4;
 int ledVerde = 7;
 int ledAmarelo = 8;
+int ledLaranja = 9;
+int ledBranco = 6;
 //
 //BOTÃO:
 int botao = 10;
@@ -20,26 +22,53 @@ void setup()
   pinMode(ledAzul, OUTPUT);
   pinMode(ledVerde, OUTPUT);
   pinMode(ledAmarelo, OUTPUT);
+  pinMode(ledLaranja, OUTPUT);
+  pinMode(ledBranco, OUTPUT);
   pinMode(botao, INPUT);
 }
 
 void loop()
 {
-  if(digitalRead(botao) == HIGH)
+  while(digitalRead(botao) == HIGH)
   {
     digitalWrite(ledVermelho, HIGH);
     delay(intervalo);
-    digitalWrite(ledAzul, HIGH);
+    digitalWrite(ledAzul, LOW);
     delay(intervalo);
     digitalWrite(ledVerde, HIGH);
     delay(intervalo);    
-    digitalWrite(ledAmarelo, HIGH);
+    digitalWrite(ledAmarelo, LOW);
+    delay(intervalo);
+    digitalWrite(ledLaranja, HIGH);
+    delay(intervalo);
+    digitalWrite(ledBranco, LOW);
+    delay(intervalo);
+  	if(digitalRead(botao) == HIGH)
+    {
+      digitalWrite(ledVermelho, LOW);
+  	  delay(intervalo);
+      digitalWrite(ledAzul, HIGH);
+  	  delay(intervalo);
+  	  digitalWrite(ledVerde, LOW);
+      delay(intervalo);
+      digitalWrite(ledAmarelo, HIGH);
+  	  delay(intervalo);
+      digitalWrite(ledLaranja, LOW);
+      delay(intervalo);
+      digitalWrite(ledBranco, HIGH);
+      delay(intervalo);
+    }
   }
-  digitalWrite(ledVermelho, LOW);
-  delay(intervalo);
-  digitalWrite(ledAzul, LOW);
-  delay(intervalo);
-  digitalWrite(ledVerde, LOW);
-  delay(intervalo);
-  digitalWrite(ledAmarelo, LOW);
+    digitalWrite(ledVermelho, LOW);
+    delay(intervalo);
+    digitalWrite(ledAzul, LOW);
+    delay(intervalo);
+    digitalWrite(ledVerde, LOW);
+    delay(intervalo);    
+    digitalWrite(ledAmarelo, LOW);
+  	delay(intervalo);
+  	digitalWrite(ledLaranja, LOW);
+  	delay(intervalo);
+  	digitalWrite(ledBranco, LOW);
+  	delay(intervalo);
 }
