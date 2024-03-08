@@ -1,0 +1,50 @@
+// C++ code
+//
+// Resistores vermelhos com 220Ohm
+// E os outros com 300
+//
+int ledVermelho = 2;
+int ledAmarelo = 3;
+int ledVerde = 5;
+int ledBranco2 = 7;
+int ledVerde2 = 8;
+
+int botao = 12;
+
+void setup()
+{
+  pinMode(ledVermelho, OUTPUT);
+  pinMode(ledAmarelo, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+  pinMode(ledBranco2, OUTPUT);
+  pinMode(ledVerde2, OUTPUT);
+  pinMode(botao, INPUT);
+}
+
+void loop()
+{
+    if(digitalRead(botao))
+    {
+      delay(1000);
+      digitalWrite(ledVerde, HIGH);
+      delay(5000);
+      digitalWrite(ledVerde, LOW);
+      digitalWrite(ledAmarelo, HIGH);
+      delay(3000);
+      digitalWrite(ledAmarelo, LOW);
+      digitalWrite(ledVermelho, HIGH);  
+      digitalWrite(ledVerde2, HIGH);
+      digitalWrite(ledBranco2, LOW);
+      delay(5000);
+      digitalWrite(ledVermelho, LOW);
+      digitalWrite(ledVerde2, LOW);
+      digitalWrite(ledVerde, HIGH);
+      digitalWrite(ledBranco2, HIGH);
+      delay(3000);
+    }
+    digitalWrite(ledVerde, LOW);
+    digitalWrite(ledAmarelo, LOW);
+    digitalWrite(ledBranco2, LOW);
+    digitalWrite(ledVermelho, LOW);
+    digitalWrite(ledVerde2, LOW);
+}
